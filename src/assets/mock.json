@@ -1,0 +1,52 @@
+{
+  "descriptions": {
+    "header": [
+      {
+        "tagName": "hero-header",
+        "name": "ヒーローヘッダー",
+        "description": "写真を全面に打ち出したヘッダーです"
+      }
+    ],
+    "column": [
+      {
+        "tagName": "single-column",
+        "name": "シングルカラム",
+        "description": "中央にテキストを配したレイアウトです"
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "hero-header",
+      "tagName": "hero-header",
+      "name": "ヒーローヘッダー",
+      "description": "写真を全面に打ち出したヘッダーです",
+      "html": "<header class=\"hero-header\">\n  <div class=\"hero-header__cover\">\n    <slot name=\"cover\"></slot>\n  </div>\n  <h1 class=\"hero-header__title\">\n    <slot name=\"title\"></slot>\n  </h1>\n</header>",
+      "css": ".hero-header {\n  position: relative;\n}\n\n.hero-header__cover ::slotted(img) {\n  width: 100%;\n}\n\n.hero-header__title {\n  position: absolute;\n  color: var(--title-color);\n  font-size: 5rem;\n  left: 50%;\n  bottom: 10px;\n  transform: translateX(-50%);\n}",
+      "slot": {
+        "cover": {
+          "type": "image",
+          "role": "背景"
+        },
+        "title": {
+          "type": "plaintext",
+          "role": "タイトル"
+        }
+      }
+    },
+    {
+      "id": "single-column",
+      "tagName": "single-column",
+      "name": "シングルカラム",
+      "description": "中央にテキストを配したレイアウトです",
+      "html": "<section class=\"single-column\">\n  <slot name=\"content\"></slot>\n</section>",
+      "css": ".single-column {\n  padding: 2rem 10%;\n  background: inherit;\n}",
+      "slot": {
+        "content": {
+          "type": "markdown",
+          "role": "内容"
+        }
+      }
+    }
+  ]
+}

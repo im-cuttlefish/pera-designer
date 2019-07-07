@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 20% 40% 40%;
+  grid-template-areas: 
+    " header header header "
+    " left   center right  ";
+}
+
+.header {
+  grid-area: header;
+}
+
+.left {
+  grid-area: left;
+  padding: 0 5px;
+}
+
+.center {
+  grid-area: center;
+  padding: 0 5px;
+}
+
+.right {
+  grid-area: right;
+  padding: 0 5px;
+}

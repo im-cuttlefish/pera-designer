@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+.icon {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
